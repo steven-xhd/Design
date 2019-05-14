@@ -1,7 +1,8 @@
 
 //body的高度
 $(function(){
-	
+	//调整窗口大小
+	window.resizeTo(1400,700)
 	var $totalcontent = $('body>div:not(:first)')
 	var totalheight = 0;	
 	$totalcontent.each(function(){	
