@@ -4,6 +4,13 @@ $(function(){
 	
 	var $totalcontent = $('body>div:not(:first)')
 	var totalheight = 0;
+	var Screenheight = Screen.height
+	var Screenwidth = Screen.width
+	$('body>div').css({
+		"height":Screenheight,
+		"width":Screenwidth
+	})
+	
 	$totalcontent.each(function(){	
 		totalheight = totalheight + $(this).height()		
 	})
