@@ -1,15 +1,40 @@
-
 //body的高度
-$(function(){
+$(function() {
 	//调整窗口大小
-	window.resizeTo(1400,700)
 	var $totalcontent = $('body>div:not(:first)')
-	var totalheight = 0;	
-	$totalcontent.each(function(){	
-		totalheight = totalheight + $(this).height()		
+	var totalheight = 0;
+	$totalcontent.each(function() {
+		totalheight = totalheight + $(this).height()
 	})
-   $('body').height(totalheight)
-   console.log($('body').height())
+	$('body').height(totalheight)
+	console.log($('body').height())
+    /*控制浏览器比例*/
+	var size = 1.0;
+   zoomout();
+	function zoomout() {
+
+		size = size + 0.1;
+
+		set();
+
+	}
+
+	function zoomin() {
+
+		size = size - 0.1;
+
+		set();
+
+	}
+
+	function set() {
+
+		document.body.style.zoom = size;
+
+		document.body.style.cssText += '; -moz-transform: scale(' + size + ');-moz-transform-origin: 0 0; ';
+
+	}
+
 })
 
 //secend图片蒙版
@@ -263,15 +288,15 @@ $(function() {
 	var $third_td = $('.third td')
 	$third_td.find('h4').hide()
 	$third_td.css({
-		'opacity':'0.8'
+		'opacity': '0.8'
 	})
-	$third_td.hover(function(){
-		$(this).css('opacity','1')
+	$third_td.hover(function() {
+		$(this).css('opacity', '1')
 		$(this).find('h4').fadeIn(500)
-	},function(){
-		$(this).css('opacity','0.8')
+	}, function() {
+		$(this).css('opacity', '0.8')
 		$(this).find('h4').fadeOut(500)
-	})	
+	})
 	$third_img.hover(function() {
 		/* var index = $(this).index()
 		 console.log(index)*/
