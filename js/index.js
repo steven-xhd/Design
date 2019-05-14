@@ -3,16 +3,7 @@
 $(function(){
 	
 	var $totalcontent = $('body>div:not(:first)')
-	var totalheight = 0;
-	var screenheight = $(window).height()
-	var screenwidth = $(window).width()
-	$('body>div:not(:first)').each(function(){
-		$(this).css({
-			"width":screenwidth,
-			"height":screenheight
-		})
-	})
-	console.log(screenheight,screenwidth)
+	var totalheight = 0;	
 	$totalcontent.each(function(){	
 		totalheight = totalheight + $(this).height()		
 	})
