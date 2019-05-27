@@ -1,13 +1,26 @@
 //body的高度
+
+var itemheight = window.innerHeight
+var itemwidth = window.innerWidth
 $(function() {
 	//调整窗口大小
+	//document.getElementsByTagName('body')[0].style.zoom=1.09
 	var $totalcontent = $('body>div:not(:first)')
 	var totalheight = 0;
 	$totalcontent.each(function() {
 		totalheight = totalheight + $(this).height()
 	})
-	$('body').height(totalheight)
+	$('body').css({
+		"height":totalheight,
+		"width":1400,
+		"margin": "0 auto"
+	})
 	console.log($('body').height())
+    /*控制浏览器比例*/
+    console.log(window.innerHeight,window.innerWidth)
+    $('body>div:first').css({
+    	"width":itemwidth
+    })
     /*控制浏览器比例*/
 	var size = 1.0;
    zoomout();
@@ -104,7 +117,7 @@ var getscolltop = 0
 //滚动滚动条移动相应高度
 $(function() {
 	//页面高度
-	var itemscolldistance = 700
+	var itemscolldistance = 775
 
 	var $body = $('body,html')
 
